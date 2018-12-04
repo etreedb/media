@@ -1,0 +1,22 @@
+@font-face{
+    font-family:Iconochive-Regular;
+    src:url("https://archive.org/includes/fonts/Iconochive-Regular.eot?-ccsheb");
+    src:url("https://archive.org/includes/fonts/Iconochive-Regular.eot?#iefix-ccsheb") format("embedded-opentype"),url("https://archive.org/includes/fonts/Iconochive-Regular.woff?-ccsheb") format("woff"),url("https://archive.org/includes/fonts/Iconochive-Regular.ttf?-ccsheb") format("truetype"),url("https://archive.org/includes/fonts/Iconochive-Regular.svg?-ccsheb#Iconochive-Regular") format("svg");
+    font-weight:400;
+    font-style:normal
+}
+[class*=" iconochive-"],[class^=iconochive-]{
+    font-family:Iconochive-Regular;
+    speak:none;
+    font-style:normal;
+    font-weight:400;
+    font-variant:normal;
+    text-transform:none;
+    line-height:1;
+    -webkit-font-smoothing:antialiased;
+    -moz-osx-font-smoothing:grayscale
+}
+
+.iconochive-logo:before{
+    content:"\1F3DB"
+}
