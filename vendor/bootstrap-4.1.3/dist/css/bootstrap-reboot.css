@@ -62,6 +62,7 @@ p {
 abbr[title],
 abbr[data-original-title] {
   text-decoration: underline;
+  -webkit-text-decoration: underline dotted;
   text-decoration: underline dotted;
   cursor: help;
   border-bottom: 0;
@@ -130,14 +131,14 @@ sup {
 }
 
 a {
-  color: #007BA7;
+  color: #4169e1;
   text-decoration: none;
   background-color: transparent;
   -webkit-text-decoration-skip: objects;
 }
 
 a:hover {
-  color: #00435b;
+  color: #1d44b8;
   text-decoration: underline;
 }
 
@@ -166,8 +167,16 @@ samp {
 pre {
   margin-top: 0;
   margin-bottom: 1rem;
-  overflow: auto;
-  -ms-overflow-style: scrollbar;
+  word-wrap: break-word;
+  /* Internet Explorer 5.5+ */
+  white-space: pre-wrap;
+  /* Since CSS 2.1 */
+  white-space: -moz-pre-wrap;
+  /* Mozilla, since 1999 */
+  white-space: -pre-wrap;
+  /* Opera 4-6 */
+  white-space: -o-pre-wrap;
+  /* Opera 7 */
 }
 
 figure {
@@ -191,9 +200,10 @@ table {
 caption {
   padding-top: 0.75rem;
   padding-bottom: 0.75rem;
+  font-weight: 700;
   color: #6c757d;
-  text-align: left;
-  caption-side: bottom;
+  text-align: center;
+  caption-side: top;
 }
 
 th {
@@ -327,5 +337,4 @@ template {
 [hidden] {
   display: none !important;
 }
-
 /*# sourceMappingURL=bootstrap-reboot.css.map */

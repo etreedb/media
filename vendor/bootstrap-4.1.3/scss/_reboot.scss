@@ -245,10 +245,15 @@ pre {
   // Reset browser default of `1em` to use `rem`s
   margin-bottom: 1rem;
   // Don't allow content to break outside
-  overflow: auto;
+  //  overflow: auto;
   // We have @viewport set which causes scrollbars to overlap content in IE11 and Edge, so
   // we force a non-overlapping, non-auto-hiding scrollbar to counteract.
-  -ms-overflow-style: scrollbar;
+  //  -ms-overflow-style: scrollbar;
+  word-wrap: break-word;       /* Internet Explorer 5.5+ */
+  white-space: pre-wrap;       /* Since CSS 2.1 */
+  white-space: -moz-pre-wrap;  /* Mozilla, since 1999 */
+  white-space: -pre-wrap;      /* Opera 4-6 */
+  white-space: -o-pre-wrap;    /* Opera 7 */
 }
 
 
@@ -290,9 +295,10 @@ table {
 caption {
   padding-top: $table-cell-padding;
   padding-bottom: $table-cell-padding;
+  font-weight: 700;
   color: $table-caption-color;
-  text-align: left;
-  caption-side: bottom;
+  text-align: center;
+  caption-side: top;
 }
 
 th {
