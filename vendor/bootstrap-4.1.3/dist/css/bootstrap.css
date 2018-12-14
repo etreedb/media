@@ -83,6 +83,41 @@
   cursor: help;
 }
 
+.textareatools {
+  padding: 0;
+  background-color: #ef9b49;
+  border-color: #000;
+  border-top: solid;
+  border-radius: 10px 10px 0 0;
+}
+
+.textareatools ul {
+  top: 0;
+  display: inline;
+  padding-left: 10px;
+  list-style-type: none;
+}
+
+.textareatools ul li {
+  display: inline;
+  padding-right: 12px;
+}
+
+.textareatools ul li,
+.textareatools img {
+  display: none;
+}
+
+.textareatools li a {
+  color: #000;
+  text-decoration: none;
+}
+
+.textareatools li:hover {
+  color: #fff;
+  cursor: pointer;
+}
+
 *,
 *::before,
 *::after {
