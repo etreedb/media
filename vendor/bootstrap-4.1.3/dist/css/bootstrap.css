@@ -39,6 +39,10 @@
   color: #ef9b49;
 }
 
+.etreedb-nl2br {
+  white-space: pre-line;
+}
+
 @font-face {
   font-family: Iconochive-Regular;
   font-style: normal;
@@ -3187,9 +3191,9 @@ input[type="button"].btn-block {
 }
 
 .dropdown-item:hover, .dropdown-item:focus {
-  color: #16181b;
+  color: #fff;
   text-decoration: none;
-  background-color: #f8f9fa;
+  background-color: #4169e1;
 }
 
 .dropdown-item.active, .dropdown-item:active {
