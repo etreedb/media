@@ -43,6 +43,26 @@
   white-space: pre-line;
 }
 
+.etreedb-textareatools {
+  margin-right: 3px;
+  font-weight: 400;
+}
+
+.etreedb-textareatools:hover {
+  color: #000;
+  background-color: #ef9b49;
+}
+
+.etreedb-textareatools-container {
+  padding-left: 0;
+  margin: 0;
+}
+
+.etreedb-textareatools-badge {
+  margin-top: 1em;
+  margin-bottom: 0;
+}
+
 @font-face {
   font-family: Iconochive-Regular;
   font-style: normal;
