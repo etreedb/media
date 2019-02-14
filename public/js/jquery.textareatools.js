@@ -147,13 +147,14 @@ jQuery(function() {
     }
 
     // Build <li> for each tool
-    ul = jQuery('<ul />');
+    ul = jQuery('<ul style="margin-bottom: 0; padding-left: 0" class="btn-group" />');
     for (button = 0; button < buttons.length; button++) {
-        li = jQuery('<li>' + buttons[button].title.replace(/ /g, "&nbsp;") + '</li>');
-        li.attr('title', buttons[button].tooltip);
-        jQuery(li).data('helper', buttons[button])
-        li.click(jQuery(li).data('helper').direct);
-        ul.append(li);
+      li = jQuery('<li class="btn btn-sm btn-outline-primary">' + buttons[button].title.replace(/ /g, "&nbsp;") + '</li>');
+
+      li.attr('title', buttons[button].tooltip);
+      jQuery(li).data('helper', buttons[button])
+      li.click(jQuery(li).data('helper').direct);
+      ul.append(li);
     }
 
     // Build and position container
@@ -161,16 +162,15 @@ jQuery(function() {
     jQuery(dock).insertBefore(this);
     jQuery(this).data('helper', ul);
 
-    // Set dynamic properties
-    jQuery(dock).css('width', jQuery(this).width() - 4);
-
     // Bind keyup to data checking functions of tools
     jQuery(this).keyup(function(event) {
       jQuery(this).data('helper').find('li').each(function(index, node) {
         if(!jQuery(node).data('helper').test()) {
-          jQuery(this).css('font-weight', 'bold');
+          jQuery(this).addClass('btn-danger');
+          jQuery(this).removeClass('btn-outline-primary');
         } else {
-          jQuery(this).css('font-weight', 'normal');
+          jQuery(this).removeClass('btn-danger');
+          jQuery(this).addClass('btn-outline-primary');
         }
       });
     });
