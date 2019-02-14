@@ -39,6 +39,34 @@
   color: #ef9b49;
 }
 
+.etreedb-nl2br {
+  white-space: pre-line;
+}
+
+.etreedb-textareatools {
+  margin-right: 3px;
+  font-weight: 400;
+}
+
+.etreedb-textareatools:hover {
+  color: #000;
+  background-color: #ef9b49;
+}
+
+.etreedb-textareatools-container {
+  padding-left: 0;
+  margin: 0;
+}
+
+.etreedb-textareatools-badge {
+  margin-top: 1em;
+  margin-bottom: 0;
+}
+
+.etreedb-form-row-padding {
+  padding-top: 20px;
+}
+
 @font-face {
   font-family: Iconochive-Regular;
   font-style: normal;
@@ -3187,9 +3215,9 @@ input[type="button"].btn-block {
 }
 
 .dropdown-item:hover, .dropdown-item:focus {
-  color: #16181b;
+  color: #fff;
   text-decoration: none;
-  background-color: #f8f9fa;
+  background-color: #4169e1;
 }
 
 .dropdown-item.active, .dropdown-item:active {

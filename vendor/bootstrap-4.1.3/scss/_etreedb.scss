@@ -1,3 +1,32 @@
 .etreedb {
   color: $orange;
 }
+
+.etreedb-nl2br {
+  white-space: pre-line;
+}
+
+.etreedb-textareatools {
+  margin-right: 3px;
+  font-weight: 400;
+}
+
+.etreedb-textareatools:hover {
+  color: $black;
+  background-color: $primary;
+}
+
+.etreedb-textareatools-container {
+  padding-left: 0;
+  margin: 0;
+}
+
+// For the badge above at textareatools
+.etreedb-textareatools-badge {
+  margin-top: 1em;
+  margin-bottom: 0;
+}
+
+.etreedb-form-row-padding {
+  padding-top: 20px;
+}
