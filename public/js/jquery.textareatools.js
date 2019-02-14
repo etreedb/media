@@ -16,22 +16,18 @@ jQuery(function() {
     // Create the containing div
     f = this; // used like a use() in helper pattern
 
-    if (! options) {
+    if (options === undefined) {
       options = {
-        include: []
-      }
-    }
-
-    if (! options.include.length) {
-      options.include = {
-        timings: true,
-        tracks: true,
-        proper: true,
-        unescape: true,
-        nobr: true,
-        tokenize: true,
-        map: true
-      }
+        include: {
+          timings: true,
+          tracks: true,
+          proper: true,
+          unescape: true,
+          nobr: true,
+          tokenize: true,
+          map: true
+        }
+      };
     }
 
     if (this.context.nodeName.toLowerCase() != 'textarea') {
