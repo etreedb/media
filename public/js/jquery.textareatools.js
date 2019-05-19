@@ -16,14 +16,18 @@ jQuery(function() {
     // Create the containing div
     f = this; // used like a use() in helper pattern
 
-    if (! options.include) {
-      options.include.timings = true;
-      options.include.tracks = true;
-      options.include.proper = true;
-      options.include.unescape = true;
-      options.include.nobr = true;
-      options.include.tokenize = true;
-      options.include.map = true;
+    if (options === undefined) {
+      options = {
+        include: {
+          timings: true,
+          tracks: true,
+          proper: true,
+          unescape: true,
+          nobr: true,
+          tokenize: true,
+          map: true
+        }
+      };
     }
 
     if (this.context.nodeName.toLowerCase() != 'textarea') {
@@ -70,6 +74,7 @@ jQuery(function() {
           return (this.field.val() == this.field.val().replace(/^[0-9]{1,3}[:\)-\.\t ][-:]?[ \t]*/mg, '').replace(/^[dsDS][0-9][Tt][0-9]{1,2}[:\)-\.\t ][-:]?[ \t]*/mg, ''));
         }
       }
+    }
 
     if (options.include.proper) {
       buttons[buttons.length] = {
