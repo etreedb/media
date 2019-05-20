@@ -56,7 +56,7 @@ jQuery(function() {
     });
 */
     jQuery(this).blur(function(event) {
-      jQuery(this).val(jQuery(this).val().replace(/[^0-9]/g, ''));
+      jQuery(this).val(jQuery(this).val().replace(/[^0-9\.]/g, ''));
       val = Number(jQuery(this).val().replace(/\,/g,'').replace(/\ /g,''));
 
       if (val < 1000) {
