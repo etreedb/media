@@ -42,7 +42,8 @@ jQuery(function() {
     jQuery(this).data('view', div);
     jQuery(div).insertAfter(jQuery(this));
 
-    const calculate = function(event) {
+/*
+    jQuery(this).keyup(function(event) {
       val = Number(jQuery(this).val().replace(/\,/g,'').replace(/\ /g,''));
 
       if (val < 1000) {
@@ -52,9 +53,19 @@ jQuery(function() {
       } else {
           jQuery(this).data('view').html(' ' + bytesToSize(val, 2));
       }
-    }
+    });
+*/
+    jQuery(this).blur(function(event) {
+      jQuery(this).val(jQuery(this).val().replace(/[^0-9]/g, ''));
+      val = Number(jQuery(this).val().replace(/\,/g,'').replace(/\ /g,''));
 
-    jQuery(this).keyup(calculate());
-    jQuery(this).blur(calculate());
+      if (val < 1000) {
+          jQuery(this).data('view').html(' ' + val + ' MB');
+      } else if (val >= 1000 && val < 100000) {
+          jQuery(this).data('view').html(' ' + bytesToSize(val * 1000000, 2));
+      } else {
+          jQuery(this).data('view').html(' ' + bytesToSize(val, 2));
+      }
+    });
   }
 });
