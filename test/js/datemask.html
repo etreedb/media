@@ -2,40 +2,30 @@
 <html>
   <head>
     <script src="../../public/js/jquery/jquery.min.js"></script>
-    <script src="../../public/js/jquery/jquery-ui.min.js"></script>
     <script src="../../public/js/datemask.js"></script>
-    <script>
-      jQuery.noConflict();
-    </script>  
   </head>
 
   <body>
     <h1>Test Datemask</h1>
     <script>
+      $(function() {
 
-      jQuery(function() {
-        function TestException(message) {
-          this.message = message;
-          this.name = 'TestException';
+        const $event = {
+          target: $('<text value=""/>')
         }
 
-        test = function(testValue, testResult) {
-          target = document.createElement('text'); 
-          target.value = testValue;
+        function test(testValue, testResult) {
+          $event.target.value = testValue;
 
-          $event = {
-            target: target
-          };
+          $($event.target).datemask($event);
 
-          jQuery(target).datemask($event);
-
-          if (target.value === testResult) {
-            window.document.write('Test Passed: ' + testValue + ' ' + target.value + '<br>');
-            return true;
+          if ($event.target.value === testResult) {
+            window.document.write('Test Passed: ' + testValue + ' ' + $event.target.value + '<br>');
+          } else {
+            window.document.write('<font color="red">Test Failed: ' + testValue + ' ' + $event.target.value + "</font><br>");
           }
 
-          window.document.write('<font color="red">Test Failed: ' + testValue + ' ' + target.value + "</font><br>");
-          return false;
+          delete $event;
         }
 
         // Month
@@ -107,7 +97,6 @@
         test('??/??/????', '??/??/????');
         test('??/??/39', '??/??/1939');
       });
-
     </script>
   </body>
 </html>
