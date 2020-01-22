@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script src="../../public/js/jquery/jquery.min.js"></script>
+    <script src="../../public/js/jquery/jquery-ui.min.js"></script>
+    <script src="../../public/js/datemask.js"></script>
+    <script>
+      jQuery.noConflict();
+    </script>  
+  </head>
+
+  <body>
+    <h1>Test Datemask</h1>
+    <script>
+
+      jQuery(function() {
+        function TestException(message) {
+          this.message = message;
+          this.name = 'TestException';
+        }
+
+        test = function(testValue, testResult) {
+          target = document.createElement('text'); 
+          target.value = testValue;
+
+          $event = {
+            target: target
+          };
+
+          jQuery(target).datemask($event);
+
+          if (target.value === testResult) {
+            window.document.write('Test Passed: ' + testValue + ' ' + target.value + '<br>');
+            return true;
+          }
+
+          window.document.write('<font color="red">Test Failed: ' + testValue + ' ' + target.value + "</font><br>");
+          return false;
+        }
+
+        // Month
+        test('1', '1');
+        test('2', '02/');
+        test('3', '03/');
+        test('4', '04/');
+        test('5', '05/');
+        test('6', '06/');
+        test('7', '07/');
+        test('8', '08/');
+        test('9', '09/');
+        test('10', '10/');
+        test('11', '11/');
+        test('12', '12/');
+
+        // Invalid months should backspace to a single digit
+        test('13', '1');
+        test('14', '1');
+
+        // This test case is handled above with '2' so this should fallback to test value
+        // This tests ordering of datemasks
+        test('20', '20');
+
+        // Days
+        test('01/1', '01/1');
+        test('01/10', '01/10/');
+        test('01/1/', '01/01/');
+        test('01/2', '01/2');
+        test('01/2/', '01/02/');
+        test('01/3', '01/3');
+        test('01/30', '01/30/');
+        test('01/32', '01/3');
+        test('01/33', '01/3');
+        test('01/34', '01/3');
+        test('01/35', '01/3');
+        test('01/36', '01/3');
+        test('01/37', '01/3');
+        test('01/38', '01/3');
+        test('01/39', '01/3');
+        test('01/4', '01/04/');
+        test('01/5', '01/05/');
+        test('01/6', '01/06/');
+        test('01/7', '01/07/');
+        test('01/8', '01/08/');
+        test('01/9', '01/09/');
+
+        // Years
+        test('01/01/20', '01/01/20');
+        test('01/01/19', '01/01/19');
+        test('01/01/21', '01/01/1921');
+        test('01/01/22', '01/01/1922');
+        test('01/01/18', '01/01/2018');
+        test('01/01/17', '01/01/2017');
+        test('01/01/30', '01/01/1930');
+        test('01/01/40', '01/01/1940');
+        test('01/01/50', '01/01/1950');
+        test('01/01/60', '01/01/1960');
+        test('01/01/70', '01/01/1970');
+        test('01/01/80', '01/01/1980');
+        test('01/01/90', '01/01/1990');
+
+        // Unknown dates
+        test('?', '??/');
+        test('??/?', '??/??/');
+        test('??/??/?', '??/??/?');
+        test('??/??/??', '??/??/??');
+        test('??/??/???', '??/??/???');
+        test('??/??/????', '??/??/????');
+        test('??/??/39', '??/??/1939');
+      });
+
+    </script>
+  </body>
+</html>

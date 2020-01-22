@@ -44,10 +44,11 @@ function checkDate(as_date) {
     return true
 }
 
+
 // Mask the passed field to mm/dd/yyyy
 jQuery(function() {
     jQuery.fn.extend ({
-        datemask: function($event)
+      datemask: function($event)
         {
           const cursorKeys = '17;8;46;37;38;39;40;33;34;35;36;45;';
           if (cursorKeys.indexOf($event.keyCode + ';') !== -1) {
@@ -84,23 +85,23 @@ jQuery(function() {
           // Check for day < 10
           const m4 = /(^[0-1][0-9]\/[4-9]$)|(^[0-1][0-9]\/[1-9]\/$)/;
 
-          // Check for day > 10
-          const m4a = /^.{5}$/;
-
           // Check for invalid day
           const m5 = /^[0-1?][0-9?]\/[4-9][0-9]$/;
 
           // Verify date < 32
           const m6 = /^[0-1?][0-9?]\/[3-9][2-9]$/;
 
+          // Check for day > 10
+          const m4a = /^.{5}$/;
+
           const m7a = /^[0-1?][0-9?]\/[0]{2}$/;
           const m7 = /^[0-1?][0-9?]\/[0-3][0-9][\/]$/;
 
           // Prepend 20 to year
-          const m8 = /^[0-1?][0-9?]\/[0-3?][0-9?]\/([2][0]|[0][0-9]|[1][0-8])$/;
+          const m8 = /^[0-1?][0-9?]\/[0-3?][0-9?]\/([0][0-9]|[1][0-8])$/;
 
           // Prepend 19 to year
-          const m9 = /^[0-1?][0-9?]\/[0-3?][0-9?]\/([03-9][0-9])$/;
+          const m9 = /^[0-1?][0-9?]\/[0-3?][0-9?]\/([03-9][0-9]|[2][1-9])$/;
 
           if (mA.test(target.value)) {
             if (debug) {
@@ -148,11 +149,6 @@ jQuery(function() {
             }
             target.value = target.value.substring(0, 3) + '0'
               + target.value.substring(3) + '/';
-            } else if (m4a.test(target.value)) {
-              if (debug) {
-                alert('m4a');
-              }
-              target.value = target.value + '/';
             } else if (m5.test(target.value)) {
             if (debug) {
               alert('m5');
@@ -163,7 +159,12 @@ jQuery(function() {
               alert('m6');
             }
             target.value = target.value.substring(0, 4);
-          } else if (m7a.test(target.value)) {
+          } else if (m4a.test(target.value)) {
+            if (debug) {
+              alert('m4a');
+            }
+            target.value = target.value + '/';
+        } else if (m7a.test(target.value)) {
             if (debug) {
               alert('m7a');
             }
