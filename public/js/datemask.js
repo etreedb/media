@@ -6,8 +6,8 @@
  *
  * Coded for jQuery for db.
  *
- * etree.org
- * Copyright 1999-2018 (c) Tom H Anderson; All Rights Reserved
+ * etreedb.org
+ * Copyright 1999-2024 (c) Tom H Anderson; All Rights Reserved
  */
 
 // Check for valid mm/dd/yyyy date format
@@ -98,10 +98,10 @@ jQuery(function() {
           const m7 = /^[0-1?][0-9?]\/[0-3][0-9][\/]$/;
 
           // Prepend 20 to year
-          const m8 = /^[0-1?][0-9?]\/[0-3?][0-9?]\/([0][0-9]|[1][0-8]|[2][1-3])$/;
+          const m8 = /^[0-1?][0-9?]\/[0-3?][0-9?]\/([0][0-9]|[1][0-8]|[2][1-4])$/;
 
           // Prepend 19 to year
-          const m9 = /^[0-1?][0-9?]\/[0-3?][0-9?]\/([03-9][0-9]|[2][4-9])$/;
+          const m9 = /^[0-1?][0-9?]\/[0-3?][0-9?]\/([03-9][0-9]|[2][5-9])$/;
 
           if (mA.test(target.value)) {
             if (debug) {
